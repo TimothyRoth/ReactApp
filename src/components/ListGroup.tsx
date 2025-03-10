@@ -17,7 +17,7 @@ interface Props {
   heading: string;
 }
 
-function ListGroup({ themes, heading }: Props) {
+export default function ListGroup({ themes, heading }: Props) {
   const [selectedTheme, setSelectedTheme] = useState<Theme | null>(() => {
     const savedTheme = localStorage.getItem("current-theme");
     return savedTheme ? JSON.parse(savedTheme) : null;
@@ -85,5 +85,3 @@ function ListGroup({ themes, heading }: Props) {
     </>
   );
 }
-
-export default ListGroup;
